@@ -26,7 +26,6 @@ Edit
 # First Stage: Build
 FROM ubuntu:latest AS build
 WORKDIR /app
-
 RUN apt-get update && apt-get install -y python3 python3-pip
 COPY . /app
 RUN pip3 install --no-cache-dir -r requirements.txt
@@ -111,3 +110,14 @@ Edit
 FROM scratch
 COPY my-go-app /my-go-app
 CMD ["/my-go-app"]
+In examples/golang-multi-stage-docker-build/dockerfile-without-multisatge/dockerfile
+* it is not multi stage so wjhile building that the size is large
+* ![image](https://github.com/user-attachments/assets/c69bf1e8-ac45-4d88-9dc5-9b72e25bf475)
+* ![image](https://github.com/user-attachments/assets/a50537f4-b0e6-4ae6-9481-ae2586506cbe)
+size of the image is 637 mb.
+  USING MULTI STAGE:
+  ![image](https://github.com/user-attachments/assets/d44bef90-998e-4616-b39a-b84c88c619e5)
+  ![image](https://github.com/user-attachments/assets/e900a2a0-eccd-48a4-ac7a-63b3dde8d9c5)
+  size is now 1.96mb
+  in ths an image scratch is used which is the minimalist image
+  size reduced 
