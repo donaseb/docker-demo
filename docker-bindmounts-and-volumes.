@@ -70,3 +70,5 @@ Bind Mounts are great for local development and sharing files between the host a
 Volumes are more suitable for production environments because they are optimized for performance, easily backed up, and managed by Docker, making them more reliable and portable.
 By using bind mounts and volumes, you can ensure data persistence and smooth interaction between containers, even when a container goes down.
 
+create docker volume:
+
