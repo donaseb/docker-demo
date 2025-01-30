@@ -71,4 +71,39 @@ Volumes are more suitable for production environments because they are optimized
 By using bind mounts and volumes, you can ensure data persistence and smooth interaction between containers, even when a container goes down.
 
 create docker volume:
+![image](https://github.com/user-attachments/assets/75d9210f-7b73-45cc-8b10-cfe7cfea27bc)
+To understand the details of the volume,if in case someone has created it u just need to know the details of the volume:
+![image](https://github.com/user-attachments/assets/29a8f9a6-434f-4019-a1c0-64c437ad618c)
+To delete a volume,here the volume name is dona:
+![image](https://github.com/user-attachments/assets/334418e5-bb8d-4606-b0c4-a8ef2fc328b2)
+To remove multiple volumes:
+#docker volume rm volume1_name volume2_name
+** To mount a volume to container:
+1.check to which container you want to mount ,so first checck the running containers :
+![image](https://github.com/user-attachments/assets/6b456d2d-098e-4aa1-8dd6-8fd4d9a91ff2)
+2.we will use in this a new container for that create a docker file in the ec2:
+vim Dockerfile
+inside it just write only
+FROM ubuntu
+save and exit
+in the examples folder go into the first docker file folder and the do:
+3.create a container image called volume demo.
+![image](https://github.com/user-attachments/assets/004bb95f-3ceb-452f-8847-b40520b092fc)
+create a volume to mount to that conatiner
+#docker volume create dona
+![image](https://github.com/user-attachments/assets/ad176aaa-10cf-4cf6-a891-c1e4d2393392)
+to mount it to image name volume demo use the command
+#docker run -d --mount source=dona,target=/app volumedemo:latest
+![image](https://github.com/user-attachments/assets/1c0de20e-e9e4-4a9d-993d-26de8ee3e2e6)
+docker ps
+![image](https://github.com/user-attachments/assets/52c79c99-1d47-4817-9c62-dbe678955306)
+#docker inspect container id
+![image](https://github.com/user-attachments/assets/d17d780c-c779-46af-9b3c-a39ba0739e03)
+gives the  entire whole details of container
+![image](https://github.com/user-attachments/assets/1c547812-2b82-4a2a-92f6-4c668ef4fc5b)
+
+
+
+
+
 
