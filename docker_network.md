@@ -84,3 +84,28 @@ By using Docker network commands, we can manage container communication and isol
 running the nginx in detached mode
 here conatiner1 is the login container
 now log into the container
+![image](https://github.com/user-attachments/assets/598f51dc-002c-4e74-ace0-6f61e8f6ecae)
+# apt update
+install ping 
+#sudo apt-get update
+sudo apt-get install iputils-ping -y
+create another contsiner logout 
+![image](https://github.com/user-attachments/assets/1c426493-e9a5-434e-ae95-82daa63ddec6)
+to know the ip adress of the conatiner use 
+docker inspect login-new
+here ip adrres is 172.17.0.3
+![image](https://github.com/user-attachments/assets/25b59349-3f9c-4ed7-b180-dc8239ded307)
+ip adress of logout-new is 172.17.0.4
+![image](https://github.com/user-attachments/assets/953104d5-cfd9-45de-b5f3-e3bf4e381101)
+here we used default bridge network so both of the conatiners should be in same subnet
+when u ping one conatiner form other both works can be accese
+***![image](https://github.com/user-attachments/assets/afcd975a-330a-42e1-bfbb-e8b4771d10f4)
+network here in both containers are bridge nework
+![image](https://github.com/user-attachments/assets/1902dc70-5294-47d8-848c-f88ca7b2be3e)
+shows brige ,host netwrok
+
+
+
+
+
+
