@@ -103,9 +103,27 @@ when u ping one conatiner form other both works can be accese
 network here in both containers are bridge nework
 ![image](https://github.com/user-attachments/assets/1902dc70-5294-47d8-848c-f88ca7b2be3e)
 shows brige ,host netwrok
+*** now i want to create a finance container which is logically isolated from other conatiners :
 
 
+![image](https://github.com/user-attachments/assets/8aa38c29-e5d8-4264-9ba0-3e812d73bc3b)
+
+so here a new custom bridge network is created 
+so let us now assign the custom network to new finance container and see if it can be accessed by othr containers
+![image](https://github.com/user-attachments/assets/bd0661d9-12ef-49d3-a17f-45adff17980b)
+network :secure network 
+ip of finanace conatiner :172.18.0.2
+ip adress of logout-new is 172.17.0.4
+ip of login-new : is 172.17.0.3
+different subnwet than that of the other 2 containers
+![image](https://github.com/user-attachments/assets/4057fed9-fc2a-4d3b-8851-4158550a44b6)
 
 
+![image](https://github.com/user-attachments/assets/95c1eb2e-d487-498d-8528-0adabd37b532)
+To understand more loginto logout-new or login-new container and try to ping from this to the finance conatiner it cant be accesd
+![image](https://github.com/user-attachments/assets/66702f94-f443-4551-98c4-b01cbb73872d)
 
-
+*** create a conatiner with host network and the ip of the conatiner with the host network will be same as of the ec2 private ip
+![image](https://github.com/user-attachments/assets/9200e0d5-06af-4bb9-b165-20dcaacf0e1f)
+#docker run -d --name host-demo network=host nginx:latest
+# docker exec -it host-demo /bin/bash
